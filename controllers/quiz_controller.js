@@ -1,3 +1,8 @@
+// Proyecto: Quiz
+// URL: https://quiz2015dfmarin.herokuapp.com
+// GIT: https://github.com/dfmarin/quiz
+// Autor: dfmarin@gmail.com
+
 // GET /quizes/question
 exports.question = function(req, res) {
    res.render('quizes/question', { pregunta: 'Capital de Italia' });
