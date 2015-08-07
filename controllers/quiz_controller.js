@@ -19,7 +19,11 @@ exports.load = function(req, res, next, quizId) {
 
 // GET /quizes
 exports.question = function(req, res) {
-   models.Quiz.findAll().then( function(quiz) {
+   var opciones = {}:
+   if (req.query.search) {
+      opciones = { where: [ "pregunta like ?", '%'+req.query.search.replace(/ +/,"%" ]};
+   }
+   models.Quiz.findAll(opciones).then( function(quiz) {
       res.render('quizes/index', { quizes: quizes });
    }).catch( function(error) { next(error); });
 };
