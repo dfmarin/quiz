@@ -1,11 +1,9 @@
 #!/usr/bin/env node
-# Proyecto: Quiz
-# URL: https://quiz2015dfmarin.herokuapp.com
-# GIT: https://github.com/dfmarin/quiz
-# Autor: dfmarin@gmail.com
 
 var debug = require('debug')('quiz');
 var app = require('../app');
+console.log("var env.PORT: ", process.env.PORT);
+console.log("var env.DATABASE_URL: ", process.env.DATABASE_URL);
 
 app.set('port', process.env.PORT || 3000);
 
