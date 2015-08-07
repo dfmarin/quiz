@@ -1,3 +1,8 @@
+// Proyecto: Quiz
+// URL: https://quiz2015dfmarin.herokuapp.com
+// GIT: https://github.com/dfmarin/quiz
+// Autor: dfmarin@gmail.com
+
 var express = require('express');
 var router = express.Router();
 
@@ -14,7 +19,9 @@ router.get('/author', function(req, res) {
 });
 
 /* Preguntas & Respuestas */
-router.get('/quizes/question', quizController.question);
-router.get('/quizes/answer', quizController.answer);
+router.get('/quizes',                      quizController.index);
+router.get('/quizes/:quizId(\\d+)',        quizController.show);
+router.get('/quizes/:quizId(\\d+)/answer', quizController.answer);
 
 module.exports = router;
+
